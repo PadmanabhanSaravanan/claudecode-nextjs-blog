@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "./globals.css";
 import DarkModeToggle from "@/components/DarkModeToggle";
 
@@ -16,9 +17,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header className="flex justify-between items-center p-4 bg-surface border-b border-border">
-          <h1 className="text-3xl font-semibold m-0 text-foreground">
-            Claude Code
-          </h1>
+          <Link href="/" className="no-underline">
+            <h1 className="text-3xl font-semibold m-0 text-foreground hover:text-primary transition-colors cursor-pointer">
+              Claude Code
+            </h1>
+          </Link>
           <DarkModeToggle />
         </header>
         {children}
